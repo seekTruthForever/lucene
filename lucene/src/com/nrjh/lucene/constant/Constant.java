@@ -1,10 +1,20 @@
-package com.nrjh.lucene.fileSearcher.utils;
+package com.nrjh.lucene.constant;
+
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import com.nrjh.lucene.fileSearcher.utils.PropOptUtil;
+
 /**
  * 公共常量类
  * @author huawei
  *
  */
 public class Constant {
+	/**
+	 * 索引存放目录
+	 */
+	public static final String luceneIndexPath=((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest().getSession().getServletContext().getRealPath("/luceneIndex");
 	/**
 	 * 文件目录配置文件地址ַ
 	 */

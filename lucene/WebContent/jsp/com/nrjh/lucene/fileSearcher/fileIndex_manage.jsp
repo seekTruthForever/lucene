@@ -4,11 +4,11 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 
 <title>文件索引管理</title>
-<link rel="stylesheet" style="text/css" href="../skins/js/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css"/>
-<script type="text/javascript" src="../skins/js/jquery.min.js"></script>
-<script type="text/javascript" src="../skins/js/plupload/plupload.full.min.js"></script>
-<script type="text/javascript" src="../skins/js/plupload/jquery.plupload.queue/jquery.plupload.queue.js"></script>
-<script type="text/javascript" src="../skins/js/plupload/i18n/zh_CN.js"></script>
+<link rel="stylesheet" style="text/css" href="skins/js/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css"/>
+<script type="text/javascript" src="skins/js/jquery.min.js"></script>
+<script type="text/javascript" src="skins/js/plupload/plupload.full.min.js"></script>
+<script type="text/javascript" src="skins/js/plupload/jquery.plupload.queue/jquery.plupload.queue.js"></script>
+<script type="text/javascript" src="skins/js/plupload/i18n/zh_CN.js"></script>
 
 
 </head>
@@ -38,7 +38,7 @@
  var uploader = $("#uploader").pluploadQueue({
    // General settings
    runtimes: 'html5,flash,silverlight,html4',
-   url: "../plupload/upload.do",
+   url: "plupload/upload.do",
  
    // Maximum file size
    max_file_size: '10000mb',
@@ -78,10 +78,10 @@
    },
  
    // Flash settings
-   flash_swf_url: '../skins/js/plupload/Moxie.swf',
+   flash_swf_url: 'skins/js/plupload/Moxie.swf',
  
    // Silverlight settings
-   silverlight_xap_url: '../skins/js/plupload/Moxie.xap'
+   silverlight_xap_url: 'skins/js/plupload/Moxie.xap'
   });
    $("#toStop").on('click', function () {
    uploader.stop();
@@ -91,7 +91,7 @@
    uploader.start();
   });
   $("#reGenIndex").on('click', function () {
-	  var url = "reGenIndex.do";
+	  var url = "fileSearcher.so?method=reGenIndex";
 		  $.ajax({
 			  type:"get",
 			  url:url,

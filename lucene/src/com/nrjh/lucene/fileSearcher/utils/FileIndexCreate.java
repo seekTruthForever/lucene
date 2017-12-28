@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +21,7 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
+import com.nrjh.lucene.constant.Constant;
 import com.nrjh.lucene.utils.ikext.IKAnalyzer5x;
 import com.nrjh.lucene.utils.unicode.UnicodeReader;
 /**
@@ -33,7 +33,7 @@ public class FileIndexCreate {
 	
     private Directory directory ;
     private Analyzer analyzer ;
-    private static String indexPath=FileIndexCreate.class.getResource("/luceneIndex").getPath();
+    private static String indexPath=Constant.luceneIndexPath;
     /**
      * 创建文件索引类的构造函数
      * @param indexFilePath

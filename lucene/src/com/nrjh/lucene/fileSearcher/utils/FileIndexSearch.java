@@ -26,7 +26,10 @@ import org.apache.lucene.search.highlight.SimpleHTMLFormatter;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import com.nrjh.lucene.constant.Constant;
 import com.nrjh.lucene.utils.ikext.IKAnalyzer5x;
 /**
  * 检索文件内容
@@ -37,7 +40,7 @@ public class FileIndexSearch {
 	
     private Directory directory ;
     private Analyzer analyzer ;
-    private static String indexPath=FileIndexSearch.class.getResource("/luceneIndex").getPath();
+    private static String indexPath=Constant.luceneIndexPath;
     /**
      * 带参数构造,参数用来指定索引文件目录
      * @param indexFilePath

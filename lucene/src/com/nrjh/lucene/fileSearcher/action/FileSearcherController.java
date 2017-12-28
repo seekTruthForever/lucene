@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.nrjh.lucene.fileSearcher.utils.Constant;
+import com.nrjh.lucene.constant.Constant;
 import com.nrjh.lucene.fileSearcher.utils.FileIndexCreate;
 import com.nrjh.lucene.fileSearcher.utils.FileIndexSearch;
 /**

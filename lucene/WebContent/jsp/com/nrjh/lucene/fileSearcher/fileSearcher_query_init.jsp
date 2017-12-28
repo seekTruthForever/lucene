@@ -2,7 +2,6 @@
 <%@page import="java.util.Map"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<%@taglib uri="/tags/web-flexpaper" prefix="fp" %>
 <html>
 <%
 	Map rsltMap = (Map)request.getAttribute("rsltMap");
@@ -24,22 +23,33 @@ if(rsltMap==null) return;
 	div.title_div{font-size:14;font-weight:bold;}
 	div.content_div{font-size:14;margin-top:5px;}
 	.keyword_input{width:100%;}
+	div.tools_div{width:100%;text-align:right;}
 </style>
 <script type="text/javascript">
+	//搜索
 	function searchIt(){
-		document.forms[0].action="search.do";
+		document.forms[0].action="fileSearcher.so?method=search";
 		document.forms[0].submit();
 	}
+	//明细
 	function getDetail(docId){
-		var url = "detail.do?docId="+docId;
+		var url = "fileSearcher.so?method=detail&docId="+docId;
 		window.showModelessDialog(url,'stockerThread','dialogWidth:800px;dialogHeight:555px;center:yes;help:no;titlebar:no');
+	}
+	//管理
+	function manageIt(){
+		var url = "fileSearcher.so?method=manage";
+		window.showModalDialog(url,'stockerThread','dialogWidth:800px;dialogHeight:555px;center:yes;help:no;titlebar:no');
 	}
 </script>
 </head>
 
 <body>
+<div class="tools_div">
+<input type="button" name="manageBtn" value="管理索引" onclick="manageIt()"/>
+</div>
 <div class="searchTool_div">
-<form action="search.do" method="get">
+<form action="fileSearcher.so?method=search" method="post">
 <table width="100%">
 <tr>
 <td>
@@ -49,7 +59,6 @@ if(rsltMap==null) return;
 <input type="checkbox" name="fields" value="title" checked/><span>标题</span>
 <input type="checkbox" name="fields" value="content" checked/><span>内容</span>
 </td>
-<fp:show ElementId="fpId" SwfFile="F:/powerDesignerSJK.swf"></fp:show>
 <td>
 <input type="button" name="searchBtn" value="搜索一下" onclick="searchIt()"/>
 </td>
