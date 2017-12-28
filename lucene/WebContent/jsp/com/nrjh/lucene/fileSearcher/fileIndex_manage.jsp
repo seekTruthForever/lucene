@@ -14,10 +14,6 @@
 </head>
 <body style="font: 13px Verdana; background: #eee; color: #333">
 
-<h1>上传文件</h1>
-
-<p>请上传需要索引的文件：</p>
-
 <div id="uploader">
  <p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
 </div>
@@ -94,6 +90,7 @@
 	  var url = "fileSearcher.so?method=reGenIndex";
 		  $.ajax({
 			  type:"get",
+			  cache:false,
 			  url:url,
 			  success:function(){
 				  alert("成功");

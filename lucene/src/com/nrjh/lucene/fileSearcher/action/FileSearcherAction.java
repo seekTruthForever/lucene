@@ -25,6 +25,9 @@ public class FileSearcherAction extends HttpServlet {
 		String uri = req.getRequestURI();
 		uri=uri==null?"":uri;
 		String method = req.getParameter("method");
+		if(method==null || method.isEmpty()) {
+			method="search";
+		}
 		if("search".equals(method)){
 			String[] fields = req.getParameterValues("fields");
 			String keyword = req.getParameter("keyword");

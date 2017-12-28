@@ -13,8 +13,9 @@ String path = rsltMap.get("path").toString();
 <title>文件内容</title>
 <style type="text/css">
 	div.doc_div{margin:0 auto;width:90%;}
-	div.title_div{font-size:14;font-weight:bold; text-align:center;}
-	div.content_div{font-size:14;margin-top:5px;}
+	div.title_div{font-size:14px;font-weight:bold; text-align:center;}
+	div.content_div{margin-top:5px;}
+	div.content_div p{font-size:14px;line-height:28px;}
 </style>
 
 </head>
@@ -24,7 +25,7 @@ String path = rsltMap.get("path").toString();
 		<input type="hidden" name="docId" value='<%=docId %>'/>
 		<input type="hidden" name="path" value='<%=path %>'/>
 		<div class="title_div"><%=title %></div>
-		<div class="content_div"><%=content %></div>
+		<div class="content_div"><p><%=content %></p></div>
 	</div>
 </body>
 </html>

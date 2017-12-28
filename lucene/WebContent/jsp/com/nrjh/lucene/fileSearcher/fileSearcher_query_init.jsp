@@ -20,8 +20,10 @@ if(rsltMap==null) return;
 	div.totalHits_div{color:#333;font-size:12;margin-top:5px;margin-bottom:5px;}
 	div.all_info_div{height:500px;overflow-y:auto;overflow-x:hidden;}
 	div.info_div{margin-top:10px;width:100%;}
-	div.title_div{font-size:14;font-weight:bold;}
-	div.content_div{font-size:14;margin-top:5px;}
+	div.info_div:nth-child(even){background:#FFFFFF;}
+	div.info_div:nth-child(odd){background:#F0F0F0;}
+	div.title_div{font-size:14px;font-weight:bold;}
+	div.content_div{margin-top:5px;font-size:14px;line-height:20px;}
 	.keyword_input{width:100%;}
 	div.tools_div{width:100%;text-align:right;}
 </style>

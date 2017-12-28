@@ -22,6 +22,7 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
 import com.nrjh.lucene.constant.Constant;
+import com.nrjh.lucene.utils.common.HtmlUtils;
 import com.nrjh.lucene.utils.ikext.IKAnalyzer5x;
 import com.nrjh.lucene.utils.unicode.UnicodeReader;
 /**
@@ -82,6 +83,7 @@ public class FileIndexCreate {
 				int j=0;
 				   while ((subStr=br.readLine())!=null){
 					   if(StringUtils.isNotBlank(subStr)){
+						   subStr = HtmlUtils.htmlEncode(subStr);
 						   if(j==0){
 							   title = subStr;
 						   }
